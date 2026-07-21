@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4eadb" />
+  <meta name="description" content="長焱與恩然婚禮座位查詢與賓客資訊" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>長焱 × 恩然｜婚禮賓客指南</title>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="crest" aria-hidden="true">❦</div>
+      <p class="eyebrow">TWELVE YEARS · ONE STORY</p>
+      <h1>長焱 <span>×</span> 恩然</h1>
+      <p class="subtitle">Your Table Awaits</p>
+      <p class="intro">從同一座舞台相識，走過時間與距離，今天終於寫在同一頁。</p>
+    </section>
+
+    <nav class="quick-nav" aria-label="頁面導覽">
+      <a href="#seat">查座位</a>
+      <a href="#schedule">流程</a>
+      <a href="#experience">體驗</a>
+      <a href="#story">故事</a>
+    </nav>
+
+    <section id="seat" class="panel search-card" aria-labelledby="search-title">
+      <p class="section-kicker">FIND YOUR SEAT</p>
+      <h2 id="search-title">賓客座位查詢</h2>
+      <label for="guestName">請輸入姓名</label>
+      <div class="search-row">
+        <input id="guestName" type="search" autocomplete="name" inputmode="text" placeholder="例如：王小明" aria-describedby="privacy-note" />
+        <button id="searchButton" type="button">查詢桌次</button>
+      </div>
+      <p id="privacy-note" class="privacy-note">姓名僅供婚宴現場座位查詢使用。</p>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="resultPanel" class="panel result-panel hidden" aria-live="polite">
+      <div class="result-header">
+        <p class="result-label">WELCOME</p>
+        <h2 id="resultName"></h2>
+      </div>
+      <div class="table-card">
+        <p>今晚為你保留的位置</p>
+        <strong id="resultTable"></strong>
+        <span id="resultSeat"></span>
+      </div>
+      <dl class="details">
+        <div><dt>區域</dt><dd id="resultZone"></dd></div>
+        <div><dt>辨識資訊</dt><dd id="resultNote"></dd></div>
+      </dl>
+      <p class="closing">願今晚的每一次相遇，都成為我們故事中溫暖的一頁。</p>
+    </section>
+
+    <section id="multiplePanel" class="panel multiple-panel hidden">
+      <p class="section-kicker">PLEASE CONFIRM</p>
+      <h2>找到多筆相符資料</h2>
+      <p>請依關係或區域選擇：</p>
+      <div id="multipleResults" class="multiple-results"></div>
+    </section>
+
+    <section id="schedule" class="panel">
+      <p class="section-kicker">TODAY'S CHAPTERS</p>
+      <h2>婚宴流程</h2>
+      <div class="timeline">
+        <article><time>17:40</time><div><strong>迎賓開始</strong><p>拍貼、智能調酒與一番賞開放。</p></div></article>
+        <article><time>18:30</time><div><strong>婚宴開場</strong><p>開場影片、第一次進場與舉杯。</p></div></article>
+        <article><time>19:25</time><div><strong>第二次進場</strong><p>升降梯登場、睡衣派對與 Kahoot。</p></div></article>
+        <article><time>20:00</time><div><strong>捧花與敬酒</strong><p>互動祝福與逐桌致意。</p></div></article>
+        <article><time>20:40</time><div><strong>第三次進場</strong><p>家人獻唱、感謝致詞與故事收尾。</p></div></article>
+        <article><time>21:00</time><div><strong>送客合照</strong><p>帶著喜糖與今晚的回憶回家。</p></div></article>
+      </div>
+    </section>
+
+    <section id="experience" class="panel experience">
+      <p class="section-kicker">GUEST EXPERIENCE</p>
+      <h2>今晚別錯過</h2>
+      <div class="experience-grid">
+        <article><span>01</span><strong>拍貼機</strong><p>留下今晚最有趣的一格。</p></article>
+        <article><span>02</span><strong>智能調酒</strong><p>為相聚調一杯專屬風味。</p></article>
+        <article><span>03</span><strong>一番賞</strong><p>把一份婚禮限定驚喜帶回家。</p></article>
+        <article><span>04</span><strong>Kahoot</strong><p>看看你有多了解我們的十二年。</p></article>
+      </div>
+    </section>
+
+    <section id="story" class="panel story">
+      <p class="section-kicker">OUR STORY</p>
+      <h2>從同一座舞台，到同一頁</h2>
+      <p>我們在國中隔壁班，因共同主持校慶晚會而相識。高中、大學與研究所雖在不同學校，仍穩定地走在彼此身旁；三年的深圳遠距，讓距離成為考驗，也讓相守變得更加堅定。</p>
+      <p>十二年後，我們回到同一座城市，也終於走進同一段人生。</p>
+    </section>
+
+    <footer><p>12 YEARS · FROM THE SAME STAGE TO THE SAME PAGE</p></footer>
+  </main>
+  <script src="guest-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
