@@ -1,0 +1,14 @@
+{
+  "name": "長焱 × 恩然｜婚禮賓客指南",
+  "short_name": "婚禮座位",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6efe4",
+  "theme_color": "#f4eadb",
+  "lang": "zh-Hant",
+  "description": "長焱與恩然婚禮座位查詢、流程與賓客體驗指南",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
