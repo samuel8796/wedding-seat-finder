@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#f6efe4"/>
+  <rect x="34" y="34" width="444" height="444" rx="90" fill="none" stroke="#b99552" stroke-width="10"/>
+  <path d="M112 180c42-74 92-84 144-20 52-64 102-54 144 20-18 92-75 150-144 196-69-46-126-104-144-196z" fill="none" stroke="#4a3426" stroke-width="16"/>
+  <text x="256" y="285" text-anchor="middle" font-size="92" font-family="serif" fill="#8d6c31">長×恩</text>
+</svg>
