@@ -7,6 +7,8 @@ const multipleResults=document.getElementById('multipleResults');
 
 function normalizeName(value){return String(value||'').trim().replace(/\s+/g,'').toLocaleLowerCase('zh-Hant');}
 function clearPanels(){resultPanel.classList.add('hidden');multiplePanel.classList.add('hidden');multipleResults.innerHTML='';}
+function sameResultKey(g){return [normalizeName(g.name),g.table||'',g.seat||'',g.zone||'',g.note||''].join('|');}
+function uniqueResults(list){const seen=new Set();return list.filter(g=>{const key=sameResultKey(g);if(seen.has(key))return false;seen.add(key);return true;});}
 function showGuest(guest){
   document.getElementById('resultName').textContent=guest.name;
   document.getElementById('resultTable').textContent=guest.table||'請洽招待';
@@ -23,11 +25,11 @@ function searchGuest(){
   const guests=Array.isArray(window.GUESTS)?window.GUESTS:[];
   const exact=guests.filter(g=>normalizeName(g.name)===query);
   const partial=guests.filter(g=>normalizeName(g.name).includes(query)||query.includes(normalizeName(g.name)));
-  const matches=exact.length?exact:partial;
+  const matches=uniqueResults(exact.length?exact:partial);
   if(matches.length===0){status.textContent='找不到相符資料，請確認姓名，或洽現場招待協助。';status.classList.add('error');return;}
   if(matches.length===1){showGuest(matches[0]);return;}
   status.textContent=`找到 ${matches.length} 筆相符資料。`;
-  matches.forEach(guest=>{const option=document.createElement('button');option.type='button';option.textContent=`${guest.name}｜${guest.note||guest.zone||guest.table}`;option.addEventListener('click',()=>showGuest(guest));multipleResults.appendChild(option);});
+  matches.forEach(guest=>{const option=document.createElement('button');option.type='button';const detail=guest.note||guest.zone||guest.table||'請確認';option.textContent=`${guest.name}｜${detail}`;option.addEventListener('click',()=>showGuest(guest));multipleResults.appendChild(option);});
   multiplePanel.classList.remove('hidden');multiplePanel.scrollIntoView({behavior:'smooth',block:'start'});
 }
 button.addEventListener('click',searchGuest);
