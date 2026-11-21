@@ -1,5 +1,5 @@
 {
-  "name": "11.22 婚禮｜賓客座位查詢",
+  "name": "林亦飛 × 蔡依璇｜婚禮座位查詢",
   "short_name": "婚禮座位",
   "start_url": "./",
   "scope": "./",
@@ -7,7 +7,7 @@
   "background_color": "#f6efe4",
   "theme_color": "#f4eadb",
   "lang": "zh-Hant",
-  "description": "11月22日婚禮賓客座位查詢",
+  "description": "11月22日林亦飛與蔡依璇婚禮座位查詢",
   "icons": [
     {
       "src": "icon.svg",
