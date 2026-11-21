@@ -1,4 +1,4 @@
-const CACHE_NAME='wedding-seat-finder-v5-20261122';
+const CACHE_NAME='wedding-seat-finder-v6-20261122-guests';
 const ASSETS=['./','./index.html','./styles.css','./app.js','./manifest.json','./icon.svg','./guest-data.js'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(ASSETS)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim();});
