@@ -23,6 +23,7 @@ function searchGuest(){
   const query=normalizeName(input.value);
   if(!query){status.textContent='請先輸入姓名。';status.classList.add('error');input.focus();return;}
   const guests=Array.isArray(window.GUESTS)?window.GUESTS:[];
+  if(!guests.length){status.textContent='座位名單尚未公布，請稍後再查詢或洽現場招待。';status.classList.add('error');return;}
   const exact=guests.filter(g=>normalizeName(g.name)===query);
   const partial=guests.filter(g=>normalizeName(g.name).includes(query)||query.includes(normalizeName(g.name)));
   const matches=uniqueResults(exact.length?exact:partial);
@@ -32,6 +33,8 @@ function searchGuest(){
   matches.forEach(guest=>{const option=document.createElement('button');option.type='button';const detail=guest.note||guest.zone||guest.table||'請確認';option.textContent=`${guest.name}｜${detail}`;option.addEventListener('click',()=>showGuest(guest));multipleResults.appendChild(option);});
   multiplePanel.classList.remove('hidden');multiplePanel.scrollIntoView({behavior:'smooth',block:'start'});
 }
+const dataNotice=document.getElementById('dataNotice');
+if(dataNotice){dataNotice.classList.toggle('hidden',Array.isArray(window.GUESTS)&&window.GUESTS.length>0);}
 button.addEventListener('click',searchGuest);
 input.addEventListener('keydown',event=>{if(event.key==='Enter')searchGuest();});
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}
