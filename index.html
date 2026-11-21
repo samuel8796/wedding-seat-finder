@@ -4,30 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f4eadb" />
-  <meta name="description" content="長焱與恩然婚禮座位查詢與賓客資訊" />
+  <meta name="description" content="11月22日婚禮座位查詢與賓客指南" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
-  <title>長焱 × 恩然｜婚禮賓客指南</title>
+  <title>11.22 婚禮｜賓客座位查詢</title>
 </head>
 <body>
   <main class="app-shell">
     <section class="hero">
       <div class="crest" aria-hidden="true">❦</div>
-      <p class="eyebrow">TWELVE YEARS · ONE STORY</p>
-      <h1>長焱 <span>×</span> 恩然</h1>
-      <p class="subtitle">Your Table Awaits</p>
-      <p class="intro">從同一座舞台相識，走過十二年的日常與陪伴，今天終於寫在同一頁。</p>
+      <p class="eyebrow">NOVEMBER 22, 2026</p>
+      <h1>見證幸福的日子</h1>
+      <p class="subtitle">Wedding Celebration</p>
+      <p class="event-date"><time datetime="2026-11-22">2026 · 11 · 22</time></p>
+      <p class="intro">在這個特別的日子，感謝每一位親友蒞臨，共同見證幸福。願每一份真摯的祝福，都陪伴新人走向美好的明天。</p>
     </section>
 
     <section id="seat" class="panel search-card" aria-labelledby="search-title">
       <p class="section-kicker">FIND YOUR SEAT</p>
       <h2 id="search-title">賓客座位查詢</h2>
-      <label for="guestName">請輸入姓名(填寫表單時輸入的名字)</label>
+      <label for="guestName">請輸入賓客姓名</label>
       <div class="search-row">
         <input id="guestName" type="search" autocomplete="name" inputmode="text" placeholder="輸入姓名" aria-describedby="privacy-note" />
         <button id="searchButton" type="button">查詢桌次</button>
       </div>
+      <p id="dataNotice" class="privacy-note hidden" role="status">座位名單準備中，請稍後再查詢。</p>
       <p id="privacy-note" class="privacy-note">姓名僅供婚宴現場座位查詢使用。</p>
       <p id="status" class="status" role="status" aria-live="polite"></p>
     </section>
@@ -38,15 +40,15 @@
         <h2 id="resultName"></h2>
       </div>
       <div class="table-card">
-        <p>今晚為你保留的位置</p>
+        <p>為您保留的席位</p>
         <strong id="resultTable"></strong>
         <span id="resultSeat"></span>
       </div>
       <dl class="details">
         <div><dt>區域</dt><dd id="resultZone"></dd></div>
-        <div><dt></dt><dd id="resultNote"></dd></div>
+        <div><dt>備註</dt><dd id="resultNote"></dd></div>
       </dl>
-      <p class="closing">願今晚的每一次相遇，都成為我們故事中溫暖的一頁。</p>
+      <p class="closing">願今日的相聚成為美好的回憶，也願新人攜手走過無數幸福的日常。</p>
     </section>
 
     <section id="multiplePanel" class="panel multiple-panel hidden">
@@ -57,16 +59,15 @@
     </section>
 
     <section id="story" class="panel story">
-      <p class="section-kicker">OUR STORY</p>
-      <h2>從同一座舞台，到同一頁</h2>
-      <p>我們是國中隔壁班的同學，因共同主持校慶晚會而相識。從青澀的學生時代開始，在不同的人生階段裡，我們一直分享彼此的日常，也陪著對方成為今天的模樣。</p>
-      <p>十二年的相處，累積成許多平凡卻珍貴的片刻；今天，我們邀請你一起見證，這段故事翻開全新的一頁。</p>
+      <p class="section-kicker">WITH LOVE & BEST WISHES</p>
+      <h2>獻給新人的祝福</h2>
+      <p>願你們的愛，在每個平凡的日子裡持續閃耀；在歡笑時彼此分享，在風雨中相互扶持，將日常的每一刻都寫成溫柔而美好的故事。</p>
+      <p>祝福從今天開始的每個明天，都有愛、有陪伴，也有數不盡值得珍藏的幸福時光。新婚快樂！</p>
     </section>
 
-    <footer><p>12 YEARS · FROM THE SAME STAGE TO THE SAME PAGE</p></footer>
+    <footer><p>NOVEMBER 22, 2026 · WITH LOVE & BEST WISHES</p></footer>
   </main>
   <script src="guest-data.js"></script>
-  <script src="guest-data-update.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
